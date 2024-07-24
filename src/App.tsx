@@ -1,9 +1,18 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
+import Home from '@routes/Home'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />
+  }
+])
 
 function App() {
 
   return (
-    <>poof client</>
+    <RouterProvider router={router}></RouterProvider>
   )
 }
 
