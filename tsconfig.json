@@ -1,15 +1,17 @@
 {
   "compilerOptions": {
-    "jsx": "preserve",
     "baseUrl": ".",
+    "jsx": "react-jsx",
     "paths": {
       "@assets/*": ["src/assets/*"],
       "@contexts/*": ["src/contexts/*"],
       "@hooks/*": ["src/hooks/*"],
       "@layouts/*": ["src/components/layouts/*"],
       "@routes/*": ["src/routes/*"],
+      "@tests/*": ["src/tests/*"],
       "@/*": ["src/*"],
-    }
+    },
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
   },
   "files": [],
   "include": ["src"],
