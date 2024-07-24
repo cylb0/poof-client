@@ -1,6 +1,13 @@
+import MenuLayout from "@layouts/MenuLayout";
 import { FC } from "react";
 
 const Home:FC = () => {
-    return <h1>Home</h1>
+    return (
+        <MenuLayout>
+            <div>
+                <h1>Home</h1>
+            </div>
+        </MenuLayout>
+    )
 }
 export default Home
