@@ -5,6 +5,12 @@ type BurgerProps = {
     onClick: () => void
 }
 
+/**
+ * Burger component with X animation on click
+ * 
+ * @param isOpen - Indicates if burger menu is open
+ * @param onClick - Callback function to handle click evens
+ */
 const Burger:FC<BurgerProps> = ({ isOpen, onClick }) => {
     const baseStyle = "h-[1px] bg-quinary duration-500"
 
