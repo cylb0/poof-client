@@ -12,9 +12,12 @@ export const menu = {
             link: '/pricing',
         },
     ],
-    signIn: {
-        title: 'Sign In',
+    login: {
+        title: 'Login',
         link: '/login',
+    },
+    logout: {
+        title: 'Logout',
     },
     signUp: {
         title: 'Sign Up',

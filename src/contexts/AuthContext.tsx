@@ -1,17 +1,18 @@
 import { createContext, ReactNode, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { toast } from "sonner"
 
 /**
  * Interface that represents the context type for AuthContext
  * 
  * - token: (string) The user's bearer token or null
- * - signIn: (string) => void A method to handle user login
- * - signOut: () => void A method to handle user logout
+ * - login: (string) => void A method to handle user login
+ * - logout: () => void A method to handle user logout
  */
 interface AuthContextType {
     token: string | null
-    signIn: (token: string) => void
-    signOut: () => void
+    login: (token: string) => void
+    logout: () => void
 }
 
 /**
@@ -19,8 +20,8 @@ interface AuthContextType {
  */
 export const AuthContext = createContext<AuthContextType>({
     token: null,
-    signIn: () => {},
-    signOut: () => {},
+    login: () => {},
+    logout: () => {},
 })
 
 /**
@@ -33,23 +34,24 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     /**
      * Function that logs the user
      */
-    const signIn = (token: string) => {
+    const login = (token: string) => {
         setToken(token)
         localStorage.setItem('token', token)
-        navigate('/home')
+        navigate('/')
     }
 
     /**
      * Function that handles user logout
      */
-    const signOut = () => {
+    const logout = () => {
         setToken(null)
-        localStorage.removeItem(token)
-        navigate('/home')
+        localStorage.removeItem('token')
+        navigate('/')
+        toast.success('Logged out.')
     }
 
     const contextValue: AuthContextType = {
-        token, signIn, signOut
+        token, login, logout
     }
 
     return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>

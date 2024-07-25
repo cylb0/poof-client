@@ -4,9 +4,6 @@ import { FC } from "react";
 const Home:FC = () => {
     return (
         <MenuLayout>
-            <div>
-                <h1>Home</h1>
-            </div>
         </MenuLayout>
     )
 }
