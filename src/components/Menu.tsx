@@ -59,7 +59,7 @@ const Menu:FC = () => {
     menuElements.push(separator, !token ? loginElement : logoutElement, signUp)
 
     return (
-        <>
+        <div className="z-[999]">
             <nav className="flex text-sm justify-between items-center text-quinary border-b border-secondary font-roboto h-[80px] w-full fixed top-0 left-0 px-[20%]">
                 <div>
                     <a href="/">logo</a>
@@ -71,11 +71,11 @@ const Menu:FC = () => {
             </nav>
             
             {isOpen && 
-                <ul className="absolute flex flex-col gap-10 font-roboto text-2xl text-quinary top-[80px] w-full list-none p-[25px] p-e-[20px] md:hidden">
+                <ul className="bg-primary absolute flex flex-col gap-10 font-roboto text-2xl text-quinary top-[80px] w-full h-full list-none p-[25px] p-e-[20px] md:hidden">
                     {menuElements}
                 </ul>
             }
-        </>
+        </div>
     )
 }
 export default Menu
