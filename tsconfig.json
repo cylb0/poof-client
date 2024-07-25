@@ -1,9 +1,23 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.app.json"
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "paths": {
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@constants/*": ["src/constants/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@layouts/*": ["src/components/layouts/*"],
+      "@routes/*": ["src/routes/*"],
+      "@tests/*": ["src/tests/*"],
+      "@/*": ["src/*"],
     },
+    "types": ["vitest/globals", "@testing-library/jest-dom"],
+  },
+  "files": [],
+  "include": ["src"],
+  "references": [
     {
       "path": "./tsconfig.node.json"
     }
